@@ -768,7 +768,7 @@ func (s *websocketServiceTestSuite) TestWsTradeServe() {
 		s.assertWsTradeEventEqual(e, event)
 	}, func(err error) {
 		s.r().EqualError(err, fakeErrMsg)
-	})
+	}, false)
 	s.r().NoError(err)
 	stopC <- struct{}{}
 	<-doneC
